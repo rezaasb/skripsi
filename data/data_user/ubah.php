@@ -77,6 +77,7 @@ if( isset($_POST["submit"]) ) {
 					  <option><?=$user["level"]; ?></option>
 					  <option value="Kepala">Kepala</option>
 					  <option value="Admin">Admin</option>
+					  <option value="Distributor">Distributor</option>
 					</select>
 					<br>
 					

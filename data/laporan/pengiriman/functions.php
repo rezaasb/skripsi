@@ -1,6 +1,7 @@
 <?php
 // koneksi ke database
-include "/database/koneksi.php";
+include('database/koneksi.php');
+
 
 
 function query($query) {

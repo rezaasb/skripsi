@@ -16,33 +16,29 @@ function query($query) {
 
 function tambah($data){
 	global $conn;
-	$id_pengiriman = htmlspecialchars($data["id_pengiriman"]);
-	$id_costumer = htmlspecialchars($data["id_costumer"]);
-	$id_barang = htmlspecialchars($data["barang"]);
-	$nama_barang = htmlspecialchars($data["nabar"]);
-	$pcs = htmlspecialchars($data["pcs"]);
-	$berat = htmlspecialchars($data["berat"]);
+	$id_pengiriman = mysqli_real_escape_string($conn, htmlspecialchars($data["id_pengiriman"]));
+	$id_costumer = mysqli_real_escape_string($conn, htmlspecialchars($data["id_costumer"]));
+	$id_barang = mysqli_real_escape_string($conn, htmlspecialchars($data["barang"]));
+	$nama_barang = mysqli_real_escape_string($conn, htmlspecialchars($data["nabar"]));
+	$pcs = mysqli_real_escape_string($conn, htmlspecialchars($data["pcs"]));
+	$berat = mysqli_real_escape_string($conn, htmlspecialchars($data["berat"]));
 	$bertotal = $pcs * $berat;
-	$tanggal_kirim = htmlspecialchars($data["tanggal_kirim"]);
-	$kode = htmlspecialchars($data["kode"]);
+	$tanggal_kirim = mysqli_real_escape_string($conn, htmlspecialchars($data["tanggal_kirim"]));
+	$kode = mysqli_real_escape_string($conn, htmlspecialchars($data["kode"]));
 	$status = 1;
 	
-// $query = "INSERT INTO tb_pengiriman (id_pengiriman, id_costumer, id_barang, id_nabar, pcs, berat, bertotal, tanggal_kirim, kode, status)
-// VALUES ($id_pengiriman, $id_costumer, $id_barang, $nama_barang, $pcs, $berat, $bertotal, $tanggal_kirim, $kode, $status);";
+	$query = "INSERT INTO tb_pengiriman (id_pengiriman, id_costumer, id_barang, id_nabar, pcs, berat, bertotal, tanggal_kirim, kode, status)
+	VALUES ('$id_pengiriman', '$id_costumer', '$id_barang', '$nama_barang', '$pcs', '$berat', '$bertotal', '$tanggal_kirim', '$kode', '$status')";
+
+	mysqli_query($conn, $query);
 	
-	// query insert data
-	// $query = "INSERT INTO tb_pengiriman
-	// 			VALUES
-	// 		('$id_pengiriman','$id_costumer','$id_barang',
-	// 		'$nama_barang','$pcs','$berat','$bertotal', 
-	// 		'$tanggal_kirim','$kode', '1')
-	// 		";
+	return mysqli_affected_rows($conn);
+}
 
 	mysqli_query($conn, $query);
 	
 	return mysqli_affected_rows($conn);
 	
-}
 
 function kembali($data){
 	global $conn;

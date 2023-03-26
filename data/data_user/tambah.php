@@ -87,6 +87,7 @@ if( isset($_POST["submit"]) )
 					  <option>-- Pilih--</option>
 					  <option value="Kepala">Kepala</option>
 					  <option value="Admin">Admin</option>
+					  <option value="Distributor">Distributor</option>
 					</select>
 					<br>
 					

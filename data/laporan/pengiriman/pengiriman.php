@@ -1,4 +1,10 @@
 <?php
+  // Skrip untuk melakukan reporting error
+  error_reporting(E_ALL);
+  ini_set('display_errors', '1');
+?>
+
+<?php
 require 'functions.php';
 
 
@@ -61,8 +67,23 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
 	  <td class="text-center"><?= $row ["bertotal"]; ?></td>
 	  <td class="text-center"><?= $row ["tanggal_kirim"]; ?></td>
     <td> 
-      <label class="label label-<?= $row ["status"] == 1 ? "warning" : "success"; ?>"><?= $row ["status"] == 1 ? "Sedang Dikirim" : "Sudah Diterima"; ?></label>
-    </td>
+  <?php if ($_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Kepala') { ?>
+    <?php if ($row["status"] == 1) { ?>
+      <label class="label label-warning">Sedang Dikirim</label>
+      <a href="kirim_barang.php?id=<?= $row["id_pengiriman"] ?>" class="btn btn-sm btn-success">Kirim</a>
+    <?php } else { ?>
+      <label class="label label-success">Sudah Diterima</label>
+    <?php } ?>
+  <?php } else { ?>
+    <?php if ($row["status"] == 1) { ?>
+      <label class="label label-warning">Sedang Dikirim</label>
+    <?php } else { ?>
+      <label class="label label-success">Sudah Diterima</label>
+    <?php } ?>
+  <?php } ?>
+</td>
+
+
     
 	  
     </tr>

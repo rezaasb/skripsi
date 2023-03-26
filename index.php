@@ -74,7 +74,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b></b>NBRS</span>
       <!-- logo for regular state and mobile devices -->
@@ -115,7 +115,9 @@ if ($_SESSION['Admin']){
 	}elseif ($_SESSION['Kepala']){
 		$user1 = $_SESSION['Kepala'];
 	}
-
+	elseif ($_SESSION['Distributor']){
+		$user1 = $_SESSION['Distributor'];
+	}
 	
 	$result1 = mysqli_query($conn,"SELECT * FROM tb_user WHERE id_user = '$user1'");
 	
@@ -192,6 +194,27 @@ if ($_SESSION['Admin']){
           <ul class="treeview-menu">
             <li><a href="?page=l_costumer"><i class="fa fa-circle-o"></i>Laporan Data Costumer</a></li>
             <li><a href="?page=l_pengiriman"><i class="fa fa-circle-o"></i>Laporan Data Pengiriman</a></li>
+          </ul>
+        </li>
+		<li><a href="log/logout.php"><i class="fa fa-link"></i> <span>Log Out</span></a></li>';}
+		
+		$masuk3 = $_SESSION['Distributor'];
+	    if($masuk3){ echo
+		'
+		<li class="header">HEADER</li>
+		<!-- Optionally, you can add icons to the links -->
+        
+		  <li class="treeview">
+          <a href="#">
+		  <li><a href="?page=l_pengiriman"><i class="fa fa-circle-o"></i>Laporan Data Pengiriman</a></li>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+		  
+          <ul class="treeview-menu">
+            <li><a href="?page=l_costumer"><i class="fa fa-circle-o"></i>Laporan Data Costumer</a></li>
+            
           </ul>
         </li>
 		<li><a href="log/logout.php"><i class="fa fa-link"></i> <span>Log Out</span></a></li>';}
@@ -290,6 +313,10 @@ if ($_SESSION['Admin']){
 						}elseif ($aksi == "hapus2") {
 							include "data/data_pengiriman/hapus2.php"; 
 						}
+						elseif ($aksi == "kirim_barang") {
+							include "data/data_pengiriman/kirim_barang.php"; 
+						}
+						
 					}
 					
 					if ($page == "l_costumer") {

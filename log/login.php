@@ -48,6 +48,10 @@ if( isset($_POST["submit"]) ) {
 				$_SESSION['Kepala'] = $data1[id_user];
 				header("location: ../index.php?page=user");
 			}
+			elseif($data1['level'] == 'Distributor'){
+				$_SESSION['Distributor'] = $data1[id_user];
+				header("location: ../index.php?page=dashboard");
+			}
 		}
 		
 
@@ -106,6 +110,12 @@ if( isset($_POST["submit"]) ) {
 									  <label class="radio-inline">
 										<input type="radio" name="level" id="level" value="Kepala" checked>
 										Kepala Gudang
+									  </label>
+									</div>
+									<div class="radio">
+									  <label class="radio-inline">
+										<input type="radio" name="level" id="level" value="Distributor" checked>
+										Distributor
 									  </label>
 									</div>
           
