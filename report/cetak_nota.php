@@ -41,7 +41,7 @@ $content .= '
 	
 	
 		
-		<img src="qua.PNG" alt="logo" width="90">
+		<img src="qua.PNG" alt="logo" width="70">
 	
 		
 		<span style="font-size:20px;">TANDA TERIMA BARANG</span>
