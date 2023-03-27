@@ -135,7 +135,10 @@ function hapus($id_user) {
 	return mysqli_affected_rows($conn);
 }
 
-
+function testing($id)
+{
+	return $id;
+}
 
 
 ?>

@@ -70,7 +70,7 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
   <?php if ($_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Kepala') { ?>
     <?php if ($row["status"] == 1) { ?>
       <label class="label label-warning">Sedang Dikirim</label>
-      <a href="kirim_barang.php?id=<?= $row["id_pengiriman"] ?>" class="btn btn-sm btn-success">Kirim</a>
+      <a href="data/laporan/pengiriman/kirim_barang.php?id=<?= $row["id_pengiriman"] ?>" class="btn btn-sm btn-success">Kirim</a>
     <?php } else { ?>
       <label class="label label-success">Sudah Diterima</label>
     <?php } ?>
