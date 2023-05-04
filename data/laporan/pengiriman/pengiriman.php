@@ -28,7 +28,7 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
             <div class="box-header">
 			 <div class="box-header">
               <div class="text-center">
-				<h1>Dashboard Pengiriman All</h1>
+				<h1>Dashboard status pengiriman</h1>
 				<hr>
 
             </div>

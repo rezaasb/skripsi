@@ -171,7 +171,7 @@ if ($_SESSION['Admin']){
 		  
           <ul class="treeview-menu">
             <li><a href="?page=l_costumer"><i class="fa fa-circle-o"></i>Laporan Data Distributor</a></li>
-            <li><a href="?page=l_pengiriman"><i class="fa fa-circle-o"></i>Laporan Data Pengiriman</a></li>
+            <li><a href="?page=l_pengiriman"><i class="fa fa-circle-o"></i>Dashboard status pengiriman</a></li>
           </ul>
         </li>
 		<li><a href="log/logout.php"><i class="fa fa-link"></i> <span>Log Out</span></a></li>';}

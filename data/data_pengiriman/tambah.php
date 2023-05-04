@@ -163,7 +163,7 @@ if( isset($_POST["kembali"]) )
 					<option>-- Pilih Barang --</option>
 					<option></option>
 					</select>
-					<br>
+					<br>	
 					</div>
 					</form>
 					
@@ -175,7 +175,7 @@ if( isset($_POST["kembali"]) )
 					</div>
 					
 					<div class="col-xs-3">
-					<label for="berat">Berat/Kg</label>
+					<label for="berat">Berat/Pcs dalam satuan Kg</label>
 					<input type="text" name="berat" id="berat" class="form-control"
 					required autocomplete="off">
 					<br>
