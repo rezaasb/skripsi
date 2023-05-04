@@ -97,7 +97,7 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
 include "modal_cetakpdf.php";
 ?>
             <!-- /.box-body -->
-          </div>
+          </divr>
           <!-- /.box -->
         </div>
         <!-- /.col -->

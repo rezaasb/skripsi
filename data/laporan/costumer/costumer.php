@@ -14,7 +14,7 @@ $costumer = query("SELECT * FROM costumer");
             <div class="box-header">
 			 <div class="box-header">
               <div class="text-center">
-				<h1>Data Distributor</h1>
+				<h1>Laporan Data Distributor</h1>
 				<hr>
             </div>
               

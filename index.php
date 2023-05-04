@@ -170,7 +170,7 @@ if ($_SESSION['Admin']){
           </a>
 		  
           <ul class="treeview-menu">
-            <li><a href="?page=l_costumer"><i class="fa fa-circle-o"></i>Laporan Data Costumer</a></li>
+            <li><a href="?page=l_costumer"><i class="fa fa-circle-o"></i>Laporan Data Distributor</a></li>
             <li><a href="?page=l_pengiriman"><i class="fa fa-circle-o"></i>Laporan Data Pengiriman</a></li>
           </ul>
         </li>
