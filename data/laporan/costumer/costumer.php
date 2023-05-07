@@ -58,7 +58,6 @@ $costumer = query("SELECT * FROM costumer");
   </tbody>
 </table>
 
-<a ><button type="button" class="btn btn-default" data-toggle="modal" data-target="#cetakpdf" style="margin-top: 8px;"><i class="fa fa-print"> </i> ExportToPDF</button></a>
 
 <?php
 include "modal_cetakpdf.php";

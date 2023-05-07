@@ -50,6 +50,10 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
 	  <th scope="col" class="text-center">Berat Total</th>
 	  <th scope="col" class="text-center">Tanggal Barang dikirim</th>
     <th scope="col" class="text-center">Status Barang</th>
+    <th scope="col" class="text-center">Bukti Pengiriman
+      
+    </th>
+    
 	  </tr>
   </thead>
   <tbody>
@@ -66,6 +70,7 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
 	  <td class="text-center"><?= $row ["berat"]; ?></td>
 	  <td class="text-center"><?= $row ["bertotal"]; ?></td>
 	  <td class="text-center"><?= $row ["tanggal_kirim"]; ?></td>
+      
     <td> 
   <?php if ($_SESSION['level'] == 'Admin' || $_SESSION['level'] == 'Kepala') { ?>
     <?php if ($row["status"] == 1) { ?>
@@ -82,6 +87,13 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
     <?php } ?>
   <?php } ?>
 </td>
+<td class="text-center"><?= $row ["bukti_pengiriman"]; ?>
+<form action="upload_bukti_pengiriman.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id_pengiriman" value="<?= $row["id_pengiriman"] ?>">
+      <input type="file" name="bukti_pengiriman" required>
+      <button type="submit" class="btn btn-sm btn-primary">Upload</button>
+    </form>
+</td>
 
 
     
@@ -96,6 +108,7 @@ $pengiriman = query("SELECT * FROM tb_pengiriman
 <?php
 include "modal_cetakpdf.php";
 ?>
+
             <!-- /.box-body -->
           </divr>
           <!-- /.box -->
